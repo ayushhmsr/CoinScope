@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;    
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  background-color: #000000;
+  background-image: radial-gradient(#ffffff33 1px, #00091d 1px);
+  background-size: 20px 20px;
+}
+
+#root {
+  height: 100%;
+}
+
+.font-intel {
+  font-family: "Intel One Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@keyframes elegant-entrance {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+    filter: blur(2px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(234, 179, 8, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(234, 179, 8, 0.8));
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.animate-elegant-entrance {
+  animation: elegant-entrance 2s ease-out;
+}
+
+.animate-gentle-float {
+  animation: gentle-float 3s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 2s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out 0.5s both;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@layer utilities {
+  .nav-link-hover {
+    @apply relative py-2 text-white transition-colors duration-300 hover:text-yellow-500;
+  }
+  .nav-link-hover::after {
+    @apply content-[''] absolute bottom-0 left-0 h-[3px] w-full bg-yellow-500 scale-x-0 origin-center transition-transform duration-300;
+  }
+  .nav-link-hover:hover::after {
+    @apply scale-x-100;
+  }
+}
