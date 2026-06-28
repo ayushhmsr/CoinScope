@@ -91,6 +91,3 @@ This project uses the free tier of the CoinGecko API, which has rate limits. Whe
 **Ayush Kumar Mishra**
 [Portfolio](https://ayushkumarmishra.netlify.app/) · [LinkedIn](https://www.linkedin.com/in/ayushkumarmishra2004) · [GitHub](https://github.com/ayushhmsr)
 
-License
-
-Personal/educational project.
